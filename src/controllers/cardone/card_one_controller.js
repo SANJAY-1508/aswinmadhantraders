@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import CardOne from "../../products/cardone/CardOne";
+//import CardOne from "../../products/cardone/CardOne";
 // import CardThree from '../../products/cardthree/CardThree'
-//import ProductCardTwo from '../../products/cardtwo/ProductCardTwo'
+import ProductCardTwo from "../../products/cardtwo/ProductCardTwo";
 import API_DOMAIN from "../../config/config";
 import {
   calculateTotals,
@@ -300,30 +300,7 @@ const ProductController = () => {
     //    setting ={setting}
     //    banner={banner}
     //   />
-    //  <ProductCardTwo
-    //   products={products}
-    //   category ={category}
-    //   totals={totals}
-    //   updateQuantity={updateQuantity}
-    //   handleShowCart={handleShowCart}
-    //   handleCloseCart={handleCloseCart}
-    //   showCart={showCart}
-    //   handleShow={handleShow}
-    //   selectedProduct={selectedProduct}
-    //   handleClose={handleClose}
-    //   show={show}
-    // companydata ={companydata}
-    //   setShowVideoModal={setShowVideoModal}
-    //   showVideoModal ={showVideoModal}
-    //   removeProduct={removeFromCart}
-    //   addToCart ={addToCart}
-    //   cart={cart}
-    // setCart={setCart}
-    //   districtData={districtData}
-    // setting ={setting}
-    //  banner={banner}
-    // />
-    <CardOne
+    <ProductCardTwo
       products={products}
       category={category}
       totals={totals}
@@ -334,18 +311,41 @@ const ProductController = () => {
       handleShow={handleShow}
       selectedProduct={selectedProduct}
       handleClose={handleClose}
-      companydata={companydata}
       show={show}
-      setCart={setCart}
+      companydata={companydata}
       setShowVideoModal={setShowVideoModal}
       showVideoModal={showVideoModal}
       removeProduct={removeFromCart}
       addToCart={addToCart}
       cart={cart}
+      setCart={setCart}
       districtData={districtData}
       setting={setting}
       banner={banner}
     />
+    // <CardOne
+    //   products={products}
+    //   category={category}
+    //   totals={totals}
+    //   updateQuantity={updateQuantity}
+    //   handleShowCart={handleShowCart}
+    //   handleCloseCart={handleCloseCart}
+    //   showCart={showCart}
+    //   handleShow={handleShow}
+    //   selectedProduct={selectedProduct}
+    //   handleClose={handleClose}
+    //   companydata={companydata}
+    //   show={show}
+    //   setCart={setCart}
+    //   setShowVideoModal={setShowVideoModal}
+    //   showVideoModal={showVideoModal}
+    //   removeProduct={removeFromCart}
+    //   addToCart={addToCart}
+    //   cart={cart}
+    //   districtData={districtData}
+    //   setting={setting}
+    //   banner={banner}
+    // />
   );
 };
 

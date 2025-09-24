@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { Col, Container, Row } from "react-bootstrap";
 import { Buttons } from "../components/Buttons/Buttons";
 import { useNavigate } from "react-router-dom";
+import { HomeProductThree } from "./HomeProducts";
 
 const About = () => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const About = () => {
               </Col>
               <Col lg="6" className="py-3 text-center">
                 <img
-                  src={require("../assets/images/about.png")}
+                  src={require("../assets/images/chottabeam.gif")}
                   className="img-fluid brd"
                   alt="product"
                 />
@@ -90,6 +91,9 @@ const About = () => {
             </Row>
           </Container>
         </div>
+      </>
+      <>
+        <HomeProductThree />
       </>
       <Footer />
     </>

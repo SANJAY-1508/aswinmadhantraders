@@ -8,7 +8,7 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import Mark from "./components/Mark";
 const ContactUs = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <MetaTags
         title="Contact Us - Aswin Madhan Traders - Whole sale Crackers"
         type="website"

@@ -7,7 +7,7 @@ import { FaRegFaceSmile } from "react-icons/fa6";
 import { PiSmileySadBold } from "react-icons/pi";
 const SafetyTips = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <MetaTags
         title="Safety Tips - Aswin Madhan Traders - Whole sale Crackers"
         type="website"

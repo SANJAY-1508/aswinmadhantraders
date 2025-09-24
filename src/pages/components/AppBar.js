@@ -144,7 +144,7 @@ const AppBar = () => {
             backgroundColor: "#175a64",
           }}
           expand="lg"
-          className=" headnav mt-2 mb-2 "
+          className=" headnav mt-2"
         >
           <Container>
             <div className="mx-auto">

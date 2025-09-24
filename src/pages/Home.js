@@ -31,7 +31,11 @@ const Home = () => {
     <>
       <div className="over">
         <AppBar />
-
+        <img
+          src={require("../assets/images/banner_01.jpg")}
+          className="img-fluid w-100"
+          alt="product name"
+        />
         {/* <intro start */}
         <div className="padding">
           <Container>

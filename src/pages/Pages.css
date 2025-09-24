@@ -60,14 +60,13 @@
   color: #fff;
 }
 .counter {
-
   background-image: url(../assets/images/contact.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 
   background-position: center;
-  transform: skewY(-3deg);
+  /* transform: skewY(-3deg); */
 }
 /* counter end */
 /* prdoucts start */

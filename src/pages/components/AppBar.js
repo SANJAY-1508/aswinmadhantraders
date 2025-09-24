@@ -24,12 +24,12 @@ const AppBar = () => {
                         alt="gpay"
                       />
                     </div>
-                    <div className="text-black">
+                    <div className="text-white">
                       <h5 className="bold mt-2 mx-2">6379942657</h5>
                     </div>
                   </div>
                 </Col>
-                <Col lg="8" className="align-self-center text-black">
+                <Col lg="8" className="align-self-center text-white">
                   <Marquee
                     pauseOnHover={true}
                     direction="right"
@@ -141,7 +141,7 @@ const AppBar = () => {
       <>
         <Navbar
           style={{
-            backgroundColor: "#ffd209",
+            backgroundColor: "#922d2d",
           }}
           expand="lg"
           className=" headnav mt-2"
@@ -153,19 +153,39 @@ const AppBar = () => {
 
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto text-center py-3 justify-content-center">
-                <Nav.Link as={NavLink} exact to={"/home"}>
+                <Nav.Link
+                  as={NavLink}
+                  exact
+                  to={"/home"}
+                  className="text-white"
+                >
                   Home
                 </Nav.Link>
-                <Nav.Link as={NavLink} exact to={"/about"}>
+                <Nav.Link
+                  as={NavLink}
+                  exact
+                  to={"/about"}
+                  className="text-white"
+                >
                   About Us
                 </Nav.Link>
-                <Nav.Link as={NavLink} exact to={"/"}>
+                <Nav.Link as={NavLink} exact to={"/"} className="text-white">
                   Pricelist
                 </Nav.Link>
-                <Nav.Link as={NavLink} exact to={"/safetytips"}>
+                <Nav.Link
+                  as={NavLink}
+                  exact
+                  to={"/safetytips"}
+                  className="text-white"
+                >
                   Safety Tips
                 </Nav.Link>
-                <Nav.Link as={NavLink} exact to={"/contact"}>
+                <Nav.Link
+                  as={NavLink}
+                  exact
+                  to={"/contact"}
+                  className="text-white"
+                >
                   Contact us
                 </Nav.Link>
               </Nav>

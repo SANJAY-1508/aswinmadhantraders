@@ -1,19 +1,48 @@
-import React, { useState } from 'react'
-import styled from 'styled-components';
-import { Container, Row, Col, Table as BootstrapTable, Modal, Offcanvas } from 'react-bootstrap';
-import { FaPlay, FaShoppingCart, FaTimes, } from "react-icons/fa";
+import React, { useState } from "react";
+import styled from "styled-components";
+import {
+  Container,
+  Row,
+  Col,
+  Table as BootstrapTable,
+  Modal,
+  Offcanvas,
+} from "react-bootstrap";
+import { FaPlay, FaShoppingCart, FaTimes } from "react-icons/fa";
 import { FaPlus, FaMinus } from "react-icons/fa6";
-import { Buttons, Close } from '../../components/Buttons/Buttons';
-import PageTitle from '../../components/Buttons/PageTitle';
-import { Forms, DropDowns } from '../../components/Forms';
-import API_DOMAIN from '../../config/config';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import Bill from '../../pdf/Bill';
+import { Buttons, Close } from "../../components/Buttons/Buttons";
+import PageTitle from "../../components/Buttons/PageTitle";
+import { Forms, DropDowns } from "../../components/Forms";
+import API_DOMAIN from "../../config/config";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Bill from "../../pdf/Bill";
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
-import './productcardtwo.css'
+import "./productcardtwo.css";
 
-const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart, setShowVideoModal, showVideoModal, updateQuantity, handleShowCart, handleCloseCart, showCart, handleClose, handleShow, show, removeProduct, cart, districtData, companydata, setCart, setting, banner }) => {
+const ProductCardTwo = ({
+  products,
+  category,
+  selectedProduct,
+  totals,
+  addToCart,
+  setShowVideoModal,
+  showVideoModal,
+  updateQuantity,
+  handleShowCart,
+  handleCloseCart,
+  showCart,
+  handleClose,
+  handleShow,
+  show,
+  removeProduct,
+  cart,
+  districtData,
+  companydata,
+  setCart,
+  setting,
+  banner,
+}) => {
   const [checkout, setCheckOut] = useState(false);
   const closeOut = () => setCheckOut(false);
   const showOut = () => setCheckOut(true);
@@ -21,35 +50,35 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
   const closeModal = () => {
     window.location.reload();
     setShowEstimate(false);
-  }
+  };
   const showModal = () => setShowEstimate(true);
   const [formData, setFormData] = useState({
-    state: '',
-    city: '',
-    name: '',
-    email: '',
-    mobile: '',
-    address: ''
+    state: "",
+    city: "",
+    name: "",
+    email: "",
+    mobile: "",
+    address: "",
   });
   const [cityOptions, setCityOptions] = useState([]);
   const [printData, setPrintData] = useState([]);
   const handleStateChange = (selectedOption) => {
     const state = selectedOption.value;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
       state,
-      city: ''
+      city: "",
     }));
 
     const cities = districtData[state] || [];
-    setCityOptions(cities.map(city => ({ value: city, label: city })));
+    setCityOptions(cities.map((city) => ({ value: city, label: city })));
   };
 
   const handleCityChange = (selectedOption) => {
     const city = selectedOption.value;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      city
+      city,
     }));
   };
 
@@ -58,12 +87,12 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
 
     setFormData({
       ...formData,
-      [fieldName]: value
+      [fieldName]: value,
     });
   };
 
   const handleSubmit = () => {
-    if (!formData.mobile || formData.mobile.trim() === '') {
+    if (!formData.mobile || formData.mobile.trim() === "") {
       // toast.error('Mobile number cannot be empty!', {
       //   position: "top-center",
       //   autoClose: 2000,
@@ -75,66 +104,72 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
       //   theme: "colored",
       // });
       return;
-  }else{
-    fetch(`${API_DOMAIN}/online_enq_web.php`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        "cart_pro": cart,
-        "customer_data": formData,
-        "total_products": totals.totalProducts,
-        "total_price": totals.discountRate.toFixed(2),
-        "total_discount": totals.overallTotal.toFixed(2)
+    } else {
+      fetch(`${API_DOMAIN}/online_enq_web.php`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cart_pro: cart,
+          customer_data: formData,
+          total_products: totals.totalProducts,
+          total_price: totals.discountRate.toFixed(2),
+          total_discount: totals.overallTotal.toFixed(2),
+        }),
       })
-    })
-      .then(response => {
-        console.log('postdata', JSON.stringify({
-          "cart_pro": cart,
-          "customer_data": formData,
-          "total_products": totals.totalProducts,
-          "total_price": totals.discountRate.toFixed(2),
-          "total_discount": totals.overallTotal.toFixed(2)
-        }))
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        if (data.head.code === 200) {
-          setPrintData(data.body.data);
-          showModal();
-          setCart([]);
-          setFormData([]);
-          closeOut();
-        } else {
-          console.error(data.body.msg);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching products:', error);
-      });
+        .then((response) => {
+          console.log(
+            "postdata",
+            JSON.stringify({
+              cart_pro: cart,
+              customer_data: formData,
+              total_products: totals.totalProducts,
+              total_price: totals.discountRate.toFixed(2),
+              total_discount: totals.overallTotal.toFixed(2),
+            })
+          );
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.head.code === 200) {
+            setPrintData(data.body.data);
+            showModal();
+            setCart([]);
+            setFormData([]);
+            closeOut();
+          } else {
+            console.error(data.body.msg);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching products:", error);
+        });
     }
   };
 
   const extractVideoId = (url) => {
     const urlObj = new URL(url);
-    if (urlObj.hostname === 'youtu.be') {
+    if (urlObj.hostname === "youtu.be") {
       return urlObj.pathname.slice(1);
-    } else if (urlObj.hostname === 'youtube.com' || urlObj.hostname === 'www.youtube.com') {
-      return urlObj.searchParams.get('v') || urlObj.pathname.split('/').pop();
+    } else if (
+      urlObj.hostname === "youtube.com" ||
+      urlObj.hostname === "www.youtube.com"
+    ) {
+      return urlObj.searchParams.get("v") || urlObj.pathname.split("/").pop();
     }
-    return '';
+    return "";
   };
   const handleVideoModalShow = () => {
-    console.log('Showing video modal');
+    console.log("Showing video modal");
     setShowVideoModal(true);
   };
 
   const handleVideoModalClose = () => {
-    console.log('Closing video modal');
+    console.log("Closing video modal");
     setShowVideoModal(false);
   };
 
@@ -151,17 +186,21 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
   return (
     <div>
       <>
-        <Container fluid className='stick-top'>
+        <Container fluid className="stick-top">
           <Row>
-            <Col lg='12' className='p-0'>
+            <Col lg="12" className="p-0">
               <StyledTable>
                 <thead>
                   <tr>
                     <th>Total Products : {totals.totalProducts}</th>
-                    <th> Discount with Total (80%) : {totals.discountRate.toFixed(2)}</th>
+                    <th>
+                      {" "}
+                      Discount with Total (80%) :{" "}
+                      {totals.discountRate.toFixed(2)}
+                    </th>
                     <th>Net Rate Total : {totals.overallTotal.toFixed(2)}</th>
                     <th>
-                      <div className='cart-icon' onClick={handleShowCart}>
+                      <div className="cart-icon" onClick={handleShowCart}>
                         <FaShoppingCart />
                       </div>
                     </th>
@@ -173,67 +212,117 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
         </Container>
       </>
 
-      {category.map(categoryItem => (
+      {category.map((categoryItem) => (
         <div key={categoryItem.id}>
           <Category>
             <Container>
               <Row>
                 <Col lg="12">
-                  <div className='category' >{categoryItem.category_name}{categoryItem.discount && categoryItem.discount > 0 ? (<span className='discount_percentage'>({categoryItem.discount}% Discount)</span>) : ('')} </div>
+                  <div className="category">
+                    {categoryItem.category_name}
+                    {categoryItem.discount && categoryItem.discount > 0 ? (
+                      <span className="discount_percentage">
+                        ({categoryItem.discount}% Discount)
+                      </span>
+                    ) : (
+                      ""
+                    )}{" "}
+                  </div>
                 </Col>
               </Row>
             </Container>
           </Category>
 
-
           <Container fluid>
             <Row>
               {products
-                .filter(product => product.category_id === categoryItem.id)
-                .map(product => (
-                  <Col lg='4' md='6' className='paxpad' key={product.id}>
-                    <div className='d-flex justify-content-center product-card w-100'>
-                      <div className='align-self-center w-25 i'>
-                        <div className='product-img' onClick={() => handleShow(product)}>
-                          <img src={product.img ? product.img : require('../../assets/images/storelogo.png')} className='img-fluid' alt='product' />
+                .filter((product) => product.category_id === categoryItem.id)
+                .map((product) => (
+                  <Col lg="4" md="6" className="paxpad" key={product.id}>
+                    <div className="d-flex justify-content-center product-card w-100">
+                      <div className="align-self-center w-25 i">
+                        <div
+                          className="product-img"
+                          onClick={() => handleShow(product)}
+                        >
+                          <img
+                            src={
+                              product.img
+                                ? product.img
+                                : require("../../assets/images/storelogo.png")
+                            }
+                            className="img-fluid"
+                            alt="product"
+                          />
                         </div>
                       </div>
-                      <div className='w-75'>
-                        <div className='product-name regular'> {product.product_name}</div>
-                        <div className='text-center regular'>
-                          <span className='product-content'> {product.product_content}</span>
+                      <div className="w-75">
+                        <div className="product-name regular">
+                          {" "}
+                          {product.product_name}
+                        </div>
+                        <div className="text-center regular">
+                          <span className="product-content">
+                            {" "}
+                            {product.product_content}
+                          </span>
                         </div>
                         {/* if there is conditional rendering only net_rate_only */}
-                        <div className='text-center'>
-                          <span className='net_rate_only'> {product.discount_lock !== null && product.discount_lock === 1 ? (
-                            <>
-                              ₹<span>{product.price}</span>
-                            </>
-                          ) : ''}</span>
+                        <div className="text-center">
+                          <span className="net_rate_only">
+                            {" "}
+                            {product.discount_lock !== null &&
+                            product.discount_lock === 1 ? (
+                              <>
+                                ₹<span>{product.price}</span>
+                              </>
+                            ) : (
+                              ""
+                            )}
+                          </span>
                         </div>
                         {/* if there is conditional rendering only net_rate */}
                         {/* if there is conditional rendering apply discount show net_rate & discount_rate */}
-                        <div className='float-left w-100 d-flex'>
-                          <div className='float-left left-margin w-50'>
+                        <div className="float-left w-100 d-flex">
+                          <div className="float-left left-margin w-50">
                             {product.discount_lock === 0 ? (
                               <>
-                                <span className='net_rate'>₹<span>{product.price}</span></span>
+                                <span className="net_rate">
+                                  ₹<span>{product.price}</span>
+                                </span>
                                 <div>
-                                  <span className='discount_rate'>₹<span>{product.discount_lock !== null && product.discount_lock === 0 ? (product.price - (product.price * categoryItem.discount / 100)).toFixed(2) : product.price}</span></span>
+                                  <span className="discount_rate">
+                                    ₹
+                                    <span>
+                                      {product.discount_lock !== null &&
+                                      product.discount_lock === 0
+                                        ? (
+                                            product.price -
+                                            (product.price *
+                                              categoryItem.discount) /
+                                              100
+                                          ).toFixed(2)
+                                        : product.price}
+                                    </span>
+                                  </span>
                                 </div>
                               </>
                             ) : null}
                           </div>
-
                         </div>
                         {/* if there is conditional rendering apply discount show net_rate & discount_rate */}
                       </div>
-                      <Calc className='py-3 '>
-                        <Buttons className='mx-2' label={
-                          <><FaMinus /></>}
+                      <Calc className="py-3 ">
+                        <Buttons
+                          className="mx-2"
+                          label={
+                            <>
+                              <FaMinus />
+                            </>
+                          }
                           onClick={() => {
                             if (product.qty > 0) {
-                              updateQuantity(product.id, -1)
+                              updateQuantity(product.id, -1);
                               addToCart({
                                 id: product.id,
                                 name: product.product_name,
@@ -242,19 +331,37 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
                                 discount: categoryItem.discount,
                                 discount_lock: product.discount_lock,
                                 category_id: product.category_id,
-                                per_price: product.discount_lock !== null && product.discount_lock === 0 ? (product.price - (product.price * categoryItem.discount / 100)).toFixed(2) : product.price,
+                                per_price:
+                                  product.discount_lock !== null &&
+                                  product.discount_lock === 0
+                                    ? (
+                                        product.price -
+                                        (product.price *
+                                          categoryItem.discount) /
+                                          100
+                                      ).toFixed(2)
+                                    : product.price,
                                 product_content: product.product_content,
                                 img: product.img || null,
-                                action: actionvalue
+                                action: actionvalue,
                               });
                             }
                           }}
                         />
-                        <div className='mx-2'>
-                          <Input placeholder='Qty' value={product.qty} readOnly />
+                        <div className="mx-2">
+                          <Input
+                            placeholder="Qty"
+                            value={product.qty}
+                            readOnly
+                          />
                         </div>
-                        <Buttons className='mx-2' label={
-                          <><FaPlus /></>}
+                        <Buttons
+                          className="mx-2"
+                          label={
+                            <>
+                              <FaPlus />
+                            </>
+                          }
                           onClick={() => {
                             addToCart({
                               id: product.id,
@@ -264,16 +371,36 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
                               discount_lock: product.discount_lock,
                               discount: categoryItem.discount,
                               category_id: product.category_id,
-                              per_price: product.discount_lock !== null && product.discount_lock === 0 ? (product.price - (product.price * categoryItem.discount / 100)).toFixed(2) : product.price,
+                              per_price:
+                                product.discount_lock !== null &&
+                                product.discount_lock === 0
+                                  ? (
+                                      product.price -
+                                      (product.price * categoryItem.discount) /
+                                        100
+                                    ).toFixed(2)
+                                  : product.price,
                               product_content: product.product_content,
-                              img: product.img || null
+                              img: product.img || null,
                             });
-                            updateQuantity(product.id, 1)
+                            updateQuantity(product.id, 1);
                           }}
                         />
                       </Calc>
-                      <div className='pricebox'>
-                        <span className='price_rate'>₹<span> {((product.discount_lock !== null && product.discount_lock === 0) ? (product.price - (product.price * categoryItem.discount / 100)).toFixed(2) : product.price) * product.qty.toFixed(2)}</span></span>
+                      <div className="pricebox">
+                        <span className="price_rate">
+                          ₹
+                          <span>
+                            {" "}
+                            {(product.discount_lock !== null &&
+                            product.discount_lock === 0
+                              ? (
+                                  product.price -
+                                  (product.price * categoryItem.discount) / 100
+                                ).toFixed(2)
+                              : product.price) * product.qty.toFixed(2)}
+                          </span>
+                        </span>
                       </div>
                     </div>
                   </Col>
@@ -286,21 +413,30 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
       <>
         <Modal show={show} onHide={handleClose} centered>
           <Modal.Header closeButton>
-            <Modal.Title><div> {selectedProduct && selectedProduct.product_name}</div></Modal.Title>
+            <Modal.Title>
+              <div> {selectedProduct && selectedProduct.product_name}</div>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <table>
               <tbody>
                 <tr>
                   <td class="text-center image_video" colspan="2">
-                    <div className='modal-img'>
-                      {selectedProduct && (
-                        selectedProduct.img ? (
-                          <img src={selectedProduct.img} className='img-fluid' alt='Product' />
+                    <div className="modal-img">
+                      {selectedProduct &&
+                        (selectedProduct.img ? (
+                          <img
+                            src={selectedProduct.img}
+                            className="img-fluid"
+                            alt="Product"
+                          />
                         ) : (
-                          <img src={require('../../assets/images/storelogo.png')} className='img-fluid' alt='product' />
-                        )
-                      )}
+                          <img
+                            src={require("../../assets/images/storelogo.png")}
+                            className="img-fluid"
+                            alt="product"
+                          />
+                        ))}
                     </div>
                   </td>
                 </tr>
@@ -339,15 +475,22 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
                 <tr>
                   {selectedProduct && selectedProduct.img && (
                     <td>
-                      <div className='dual'>
-                        <img src={selectedProduct.img} className='img-fluid' alt='product' />
+                      <div className="dual">
+                        <img
+                          src={selectedProduct.img}
+                          className="img-fluid"
+                          alt="product"
+                        />
                       </div>
                     </td>
                   )}
                   {selectedProduct && selectedProduct.video_url && (
                     <td>
-                      <div className='w-25 mx-auto'>
-                        <div className='play-icon' onClick={handleVideoModalShow}>
+                      <div className="w-25 mx-auto">
+                        <div
+                          className="play-icon"
+                          onClick={handleVideoModalShow}
+                        >
                           <FaPlay />
                         </div>
                       </div>
@@ -361,13 +504,17 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
         {showVideoModal && (
           <Modal show={showVideoModal} onHide={handleVideoModalClose} centered>
             <Modal.Header closeButton>
-              <Modal.Title>{selectedProduct && selectedProduct.product_name}</Modal.Title>
+              <Modal.Title>
+                {selectedProduct && selectedProduct.product_name}
+              </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <iframe
                 width="100%"
                 height="400"
-                src={`https://www.youtube.com/embed/${extractVideoId(selectedProduct.video_url)}`}
+                src={`https://www.youtube.com/embed/${extractVideoId(
+                  selectedProduct.video_url
+                )}`}
                 frameBorder="0"
                 allowFullScreen
                 title="Product Video"
@@ -377,24 +524,52 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
         )}
       </>
       <>
-        <Offcanvas show={showCart} onHide={handleCloseCart} scroll="true" placement='end'>
-          <PageTitle onClick={handleCloseCart} title={companydata.company_name} address={companydata.address} phone={companydata.phone} />
+        <Offcanvas
+          show={showCart}
+          onHide={handleCloseCart}
+          scroll="true"
+          placement="end"
+        >
+          <PageTitle
+            onClick={handleCloseCart}
+            title={companydata.company_name}
+            address={companydata.address}
+            phone={companydata.phone}
+          />
           <Offcanvas.Body>
-            <div className='canvas-table'>
-              <div className='cart-table'>
+            <div className="canvas-table">
+              <div className="cart-table">
                 <BootstrapTable>
                   <tbody>
-                    {cart.map(cart => (
+                    {cart.map((cart) => (
                       <tr key={cart.id}>
-                        <td className='w-75'>
-                          <div className='product-name pb-2'>{cart.product_name}</div>
-                          <div className='qty-box'>
-                            <input className='form-cntrl form-control' value={cart.qty} readOnly />
+                        <td className="w-75">
+                          <div className="product-name pb-2">
+                            {cart.product_name}
+                          </div>
+                          <div className="qty-box">
+                            <input
+                              className="form-cntrl form-control"
+                              value={cart.qty}
+                              readOnly
+                            />
                           </div>
                         </td>
-                        <td className='text-end'>
-                          <div className='pb-2'> <Close label={<><FaTimes /></>} onClick={() => removeProduct(cart.id)} /> </div>
-                          <div className='price_total'>₹<span>{cart.total_price}</span></div>
+                        <td className="text-end">
+                          <div className="pb-2">
+                            {" "}
+                            <Close
+                              label={
+                                <>
+                                  <FaTimes />
+                                </>
+                              }
+                              onClick={() => removeProduct(cart.id)}
+                            />{" "}
+                          </div>
+                          <div className="price_total">
+                            ₹<span>{cart.total_price}</span>
+                          </div>
                         </td>
                       </tr>
                     ))}
@@ -402,39 +577,50 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
                 </BootstrapTable>
               </div>
             </div>
-            <div className='bottom-table'>
+            <div className="bottom-table">
               <BootstrapTable>
                 <tr>
                   <td>
                     <tr>
-                      <td className='w-100'>Total Net rate :</td>
-                      <td> ₹<span>{totals.overallTotal.toFixed(2)}</span></td>
+                      <td className="w-100">Total Net rate :</td>
+                      <td>
+                        {" "}
+                        ₹<span>{totals.overallTotal.toFixed(2)}</span>
+                      </td>
                     </tr>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <tr>
-                      <td className='w-100'>Total Discount Amount (80%) :</td>
-                      <td> ₹<span>{(totals.discountedOverallTotal).toFixed(2)}</span></td>
+                      <td className="w-100">Total Discount Amount (80%) :</td>
+                      <td>
+                        {" "}
+                        ₹<span>{totals.discountedOverallTotal.toFixed(2)}</span>
+                      </td>
                     </tr>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <tr>
-                      <td className='w-100'> Overall Total :</td>
-                      <td> ₹<span>{(totals.discountRate).toFixed(2)}</span></td>
+                      <td className="w-100"> Overall Total :</td>
+                      <td>
+                        {" "}
+                        ₹<span>{totals.discountRate.toFixed(2)}</span>
+                      </td>
                     </tr>
                   </td>
                 </tr>
               </BootstrapTable>
             </div>
 
-            <div className='text-center'>
+            <div className="text-center">
               {totals.discountRate >= "2500" && (
-                <div className='text-center regular py-3'>
-                  <Buttons label={<>Confirm Estimate</>} fullWidth={'100%'}
+                <div className="text-center regular py-3">
+                  <Buttons
+                    label={<>Confirm Estimate</>}
+                    fullWidth={"100%"}
                     onClick={() => {
                       showOut();
                       handleCloseCart();
@@ -442,7 +628,7 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
                   ></Buttons>
                 </div>
               )}
-              <div className='py-2'>
+              <div className="py-2">
                 Min Order : ₹<span>2500</span>
               </div>
             </div>
@@ -450,16 +636,19 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
         </Offcanvas>
       </>
       <>
-        <Offcanvas show={checkout} scroll="true" placement='end'>
+        <Offcanvas show={checkout} scroll="true" placement="end">
           <PageTitle onClick={closeOut} title={companydata.company_name} />
           <Offcanvas.Body>
-            <div className='customer-details'>
-              <div className='canvas-table'>
+            <div className="customer-details">
+              <div className="canvas-table">
                 <Container>
                   <Row>
-                    <Col lg='12' className='py-2'>
+                    <Col lg="12" className="py-2">
                       <DropDowns
-                        options={Object.keys(districtData).map(state => ({ value: state, label: state }))}
+                        options={Object.keys(districtData).map((state) => ({
+                          value: state,
+                          label: state,
+                        }))}
                         placeholder={"Select State"}
                         label={"Select State"}
                         name="state"
@@ -467,7 +656,7 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
                         onChange={handleStateChange}
                       />
                     </Col>
-                    <Col lg='12' className='py-2'>
+                    <Col lg="12" className="py-2">
                       <DropDowns
                         options={cityOptions}
                         placeholder={"Select City"}
@@ -477,152 +666,190 @@ const ProductCardTwo = ({ products, category, selectedProduct, totals, addToCart
                         onChange={handleCityChange}
                       />
                     </Col>
-                    <Col lg='12' className='py-2'>
+                    <Col lg="12" className="py-2">
                       <Forms
                         placeholder={"Enter the name"}
                         label={"Enter the Name"}
                         name="name"
                         value={formData.name}
-                        onChange={(e) => handleChange(e, 'name')}
+                        onChange={(e) => handleChange(e, "name")}
                       />
                     </Col>
-                    <Col lg='12' className='py-2'>
+                    <Col lg="12" className="py-2">
                       <Forms
                         placeholder={"Enter the Mail"}
                         label={"Enter the Mail"}
                         name="email"
                         value={formData.email}
-                        onChange={(e) => handleChange(e, 'email')}
+                        onChange={(e) => handleChange(e, "email")}
                       />
                     </Col>
-                    <Col lg='12' className='py-2'>
+                    <Col lg="12" className="py-2">
                       <Forms
                         placeholder={"Mobile No."}
                         label={"Mobile No."}
                         name="mobile"
                         value={formData.mobile}
-                        onChange={(e) => handleChange(e, 'mobile')}
+                        onChange={(e) => handleChange(e, "mobile")}
                       />
                     </Col>
-                    <Col lg='12' className='py-2'>
-                      <div className='py-2'> <label> Address</label></div>
+                    <Col lg="12" className="py-2">
+                      <div className="py-2">
+                        {" "}
+                        <label> Address</label>
+                      </div>
                       <textarea
-                        placeholder='Address'
-                        className='w-100'
+                        placeholder="Address"
+                        className="w-100"
                         name="address"
                         value={formData.address}
-                        onChange={(e) => handleChange(e, 'address')}
+                        onChange={(e) => handleChange(e, "address")}
                       />
                     </Col>
                   </Row>
                 </Container>
               </div>
-              <div className='bottom-table'>
+              <div className="bottom-table">
                 <BootstrapTable>
-                <tr>
-                  <td>
-                    <tr>
-                      <td className='w-100'>Total Net rate :</td>
-                      <td> ₹<span>{totals.overallTotal.toFixed(2)}</span></td>
-                    </tr>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <tr>
-                      <td className='w-100'>Total Discount Amount (80%) :</td>
-                      <td> ₹<span>{(totals.discountedOverallTotal).toFixed(2)}</span></td>
-                    </tr>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <tr>
-                      <td className='w-100'> Overall Total :</td>
-                      <td> ₹<span>{(totals.discountRate).toFixed(2)}</span></td>
-                    </tr>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>
+                      <tr>
+                        <td className="w-100">Total Net rate :</td>
+                        <td>
+                          {" "}
+                          ₹<span>{totals.overallTotal.toFixed(2)}</span>
+                        </td>
+                      </tr>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <tr>
+                        <td className="w-100">Total Discount Amount (80%) :</td>
+                        <td>
+                          {" "}
+                          ₹
+                          <span>
+                            {totals.discountedOverallTotal.toFixed(2)}
+                          </span>
+                        </td>
+                      </tr>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <tr>
+                        <td className="w-100"> Overall Total :</td>
+                        <td>
+                          {" "}
+                          ₹<span>{totals.discountRate.toFixed(2)}</span>
+                        </td>
+                      </tr>
+                    </td>
+                  </tr>
                 </BootstrapTable>
               </div>
-              <div className='d-flex justify-content-evenly'>
-                <div className='text-center regular py-3 w-100 mx-2'>
-                  <Buttons label={<>Submit</>} className="w-100" fullWidth={"100%"} onClick={handleSubmit} onHide={closeOut}></Buttons>
+              <div className="d-flex justify-content-evenly">
+                <div className="text-center regular py-3 w-100 mx-2">
+                  <Buttons
+                    label={<>Submit</>}
+                    className="w-100"
+                    fullWidth={"100%"}
+                    onClick={handleSubmit}
+                    onHide={closeOut}
+                  ></Buttons>
                 </div>
-                <div className='text-center regular py-3 w-100 mx-2'>
-                  <Buttons label={<>Cancel</>} fullWidth={"100%"} onClick={closeOut}></Buttons>
+                <div className="text-center regular py-3 w-100 mx-2">
+                  <Buttons
+                    label={<>Cancel</>}
+                    fullWidth={"100%"}
+                    onClick={closeOut}
+                  ></Buttons>
                 </div>
               </div>
             </div>
           </Offcanvas.Body>
         </Offcanvas>
         <>
-          <Modal show={showEstimate} onClick={closeModal} centered className='regular' size='lg'>
+          <Modal
+            show={showEstimate}
+            onClick={closeModal}
+            centered
+            className="regular"
+            size="lg"
+          >
             <Modal.Header closeButton>
-              <Modal.Title className='bold'>Order Preview</Modal.Title>
+              <Modal.Title className="bold">Order Preview</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Container fluid>
                 <Row>
                   <Col lg="12">
-                    <div className='text-center py-3'>
+                    <div className="text-center py-3">
                       <div> {companydata.company_name}</div>
                       <div>{companydata.address}</div>
                       <div> Phone No :{companydata.phone}</div>
                     </div>
-                    <div className='text-center'>Estimated Successfully</div>
+                    <div className="text-center">Estimated Successfully</div>
                   </Col>
                 </Row>
               </Container>
             </Modal.Body>
             <Modal.Footer>
-              <PDFDownloadLink document={<Bill data={printData} />} fileName="estimate.pdf">
-                {({ loading }) => (
-                  loading
-                    ? <Buttons label={<>Generating PDF...</>} disabled />
-                    : <Buttons label={<>Download PDF</>} />
-                )}
+              <PDFDownloadLink
+                document={<Bill data={printData} />}
+                fileName="estimate.pdf"
+              >
+                {({ loading }) =>
+                  loading ? (
+                    <Buttons label={<>Generating PDF...</>} disabled />
+                  ) : (
+                    <Buttons label={<>Download PDF</>} />
+                  )
+                }
               </PDFDownloadLink>
             </Modal.Footer>
           </Modal>
         </>
       </>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default ProductCardTwo
+export default ProductCardTwo;
 const StyledTable = styled(BootstrapTable)`
-margin-bottom:0 !important;
-background-color: #ff6a00; 
-border:0;
-border-color:#ff6a00;
-font-family  :"regular" ;
-  & th, & td {
-    text-align: center; 
-    background-color: #ff6a00; 
-    color : white;        
+  margin-bottom: 0 !important;
+  background-color: #1a3164;
+  border: 0;
+  border-color: #1a3164;
+  font-family: "regular";
+  & th,
+  & td {
+    text-align: center;
+    background-color: #1a3164;
+    color: white;
   }
 `;
 const Category = styled.div`
-background-color: red;
-border:0;
-border-color:red;
-color:white;
-text-align:center; 
-padding:10px;
-font-size:18px;
-font-family  :"bold" ;
-`
+  background-color: brown;
+  border: 0;
+  border-color: brown;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "bold";
+`;
 const Calc = styled.div`
-display:flex;
-align-items:center;
-justify-content:center;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 const Input = styled.input`
-border: none;
-outline: none;
-padding: 4px; width:70px;
-text-align:center;
-background: transparent;
-`
+  border: none;
+  outline: none;
+  padding: 4px;
+  width: 70px;
+  text-align: center;
+  background: transparent;
+`;

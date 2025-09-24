@@ -161,7 +161,7 @@ const Footer = () => {
           <Container>
             <Row>
               <Col lg="12" className="py-3">
-                <div className="text-center regular text-black">
+                <div className="text-center regular text-white">
                   Copyright © 2025,. Aswin Madhan Traders. All rights reserved
                 </div>
               </Col>

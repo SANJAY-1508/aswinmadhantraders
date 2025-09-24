@@ -30,7 +30,7 @@ const SafetyTips = () => {
               <h1 className="text-center bold">Safety Tips</h1>
             </Col>
             <Col lg="12" className="py-3">
-              <h1 className="text-center bold">Sai Ganesh Crackers</h1>
+              <h1 className="text-center bold">Aswin Madhan Traders</h1>
             </Col>
 
             <Col lg="12" className="py-3">

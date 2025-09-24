@@ -8,7 +8,7 @@ const AppBar = () => {
       <>
         <div className="mark-bg">
           <div className="d-lg-block d-none">
-            <Container>
+            <Container fluid>
               <Row className="py-2">
                 <Col
                   lg="4"
@@ -141,7 +141,7 @@ const AppBar = () => {
       <>
         <Navbar
           style={{
-            backgroundColor: "#e8b814",
+            backgroundColor: "#ffd209",
           }}
           expand="lg"
           className=" headnav mt-2"

@@ -33,7 +33,7 @@ const Footer = () => {
           phoneNumber="916379942657"
         />
       </div>
-      <a href="https://maps.app.goo.gl/VkdHfY1NSjnqLGbp6">
+      <a href="https://maps.app.goo.gl/WTN37Exd8Ht9JV5s5">
         <div className="fixed point3" style={{ cursor: "pointer" }}>
           <img
             src={require("../../assets/images/googlelocation.png")}

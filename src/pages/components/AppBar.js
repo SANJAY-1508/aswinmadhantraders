@@ -70,7 +70,7 @@ const AppBar = () => {
                   </a>
                 </Col>
                 <Col xs="4" sm="4">
-                  <a href="https://maps.app.goo.gl/VkdHfY1NSjnqLGbp6" alt="">
+                  <a href="https://maps.app.goo.gl/WTN37Exd8Ht9JV5s5" alt="">
                     <div className="mob-icon mx-auto">
                       <img
                         src={require("../../assets/images/googlelocation.png")}

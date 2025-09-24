@@ -1,0 +1,139 @@
+.vlimg {
+  width: 200px !important;
+}
+.dual {
+  height: 75px;
+  margin: 0 auto;
+  width: 75px;
+  display: flex;
+}
+.play-icon {
+  font-size: 25px;
+  background-color: red;
+  height: 60px;
+  width: 92px !important;
+  line-height: 52px;
+  text-align: center !important;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 36px;
+}
+.modal-img {
+  width: 250px;
+  height: 220px;
+  display: flex;
+  margin: 0 auto;
+}
+.modal-img img {
+  object-fit: cover;
+}
+.discount_rate,
+.net_rate_only {
+  color: green;
+  font-weight: 600;
+  font-family: "regular";
+  font-size: 18px;
+}
+.net_rate {
+  color: red;
+  font-weight: 600;
+  font-family: "regular";
+  font-size: 18px;
+  text-decoration: line-through;
+}
+.stick-top {
+  position: sticky;
+  top: 0;
+  z-index: 77;
+  width: 100%;
+}
+/* cart start */
+.fixed {
+  position: fixed;
+  z-index: 2;
+}
+.point2 {
+  bottom: 15px;
+  right: 10px;
+}
+.point {
+  bottom: 15px;
+  left: 10px;
+}
+.cart-icon,
+.close-icon {
+  color: yellow !important;
+  font-size: 60px;
+  cursor: pointer;
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+  -webkit-animation: blink 1s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: infinite;
+}
+.canvas-table {
+  height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: 2px;
+}
+.canvas-table table tr {
+  border-bottom: 1px solid #d2d2d2 !important;
+}
+.canvas-table table tr td:last-child {
+  text-align: end !important;
+  vertical-align: baseline;
+}
+.form-cntrl {
+  width: 25% !important;
+}
+.bottom-table {
+  position: sticky;
+  background: #fff;
+  z-index: 12;
+  bottom: 0px;
+}
+.bottom-table tr {
+  border: 0 !important;
+}
+/* cart end */
+
+@media (min-width: 1px) and (max-width: 767.98px) {
+  .play-icon {
+    font-size: 18px;
+    height: 45px;
+    width: 70px !important;
+    line-height: 40px;
+    padding: 0 27px;
+  }
+  .dual {
+    width: 75px;
+    height: 62px;
+    margin: 0 auto;
+  }
+  .dual img {
+    display: flex;
+    object-fit: cover;
+  }
+  .product-content,
+  .product-name,
+  .discount_rate,
+  .net_rate_only,
+  .net_rate,
+  .total_price {
+    font-size: 13px !important;
+  }
+  /* cart start */
+  .cart-icon,
+  .close-icon {
+    font-size: 60px;
+  }
+  .offcanvas {
+    width: 75% !important;
+  }
+  .price_total {
+    font-size: 12px;
+  }
+  .form-cntrl {
+    width: 50% !important;
+  }
+}

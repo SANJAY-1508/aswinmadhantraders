@@ -1,0 +1,31 @@
+.our-brands-section {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: "Merienda";
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #002c5f;
+  font-family: "Merienda";
+}
+
+.section-subtitle {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.brands-slider {
+  margin: 0 auto;
+}
+
+.brand-item {
+  padding: 10px;
+}
+
+.brand-logo {
+  width: 100%;
+  max-width: 100px;
+  margin: 0 auto;
+  display: block;
+}

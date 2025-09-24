@@ -1,0 +1,229 @@
+.title {
+  padding: 12px 30px;
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "bold";
+}
+.bg-green {
+  background-color: #038403;
+}
+.bg-red {
+  background-color: red;
+}
+.safe-list {
+  display: flex;
+  align-items: center;
+}
+.safe-icon svg {
+  font-size: 37px;
+}
+.box-green {
+  background-color: green;
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  margin: 10px 0;
+  font-family: "regular";
+  height: 100px;
+}
+.box-red {
+  background-color: red;
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  margin: 10px 0;
+  font-family: "regular";
+  height: 100px;
+}
+.box {
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: "regular";
+}
+.box-icon {
+  background-color: #ff6a00;
+  padding: 12px;
+  display: inline-block;
+  margin: 12px auto;
+}
+.box-icon svg {
+  color: #fff !important;
+}
+/* counter start */
+.counter-box {
+  font-size: 40px;
+  font-family: "bold";
+  color: #fff;
+}
+.counter {
+
+  background-image: url(../assets/images/contact.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  background-position: center;
+  transform: skewY(-3deg);
+}
+/* counter end */
+/* prdoucts start */
+.home-product {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.home-product:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  transition: 0.15s ease-in-out;
+}
+.home-product-name {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  text-align: left;
+  padding: 30px 30px;
+}
+/* sale bg start*/
+.salebg {
+  background-color: #ff6a00;
+  padding: 50px 0;
+  color: #ffffff;
+}
+/* sale bg  end*/
+/* about start */
+.brd {
+  border-radius: 100%;
+}
+.choose {
+  background: #ff6a00;
+  color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 18px;
+  height: 280px;
+}
+.choose-icon {
+  background-color: #395aa8;
+  padding: 16px;
+  border-radius: 10px;
+  display: inline-flex;
+  margin-bottom: 5px;
+}
+
+.choose svg path {
+  stroke: #ffffff;
+}
+
+.counter-bg {
+  background: #ff6a00;
+  color: #395aa8;
+  padding: 20px;
+  border-radius: 20px;
+}
+.counter-bg_two {
+  background: #395aa8;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* footer css */
+.fixed {
+  position: fixed;
+  z-index: 2;
+}
+.priceicn {
+  width: 45px;
+}
+.priceicn2 {
+  width: 120px;
+}
+.point {
+  bottom: 10px;
+  left: 10px;
+}
+.point3 {
+  bottom: 60px;
+  left: 10px;
+}
+.point4 {
+  bottom: 110px;
+  left: 10px;
+}
+.point5 {
+  bottom: 160px;
+  left: 10px;
+}
+.point6 {
+  bottom: 205px;
+  left: 10px;
+}
+.point1 {
+  bottom: 70px;
+  left: 10px;
+}
+.point2 {
+  bottom: 15px;
+  right: 10px;
+}
+.blink img {
+  width: 200px;
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+  -webkit-animation: blink 1s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (min-width: 1px) and (max-width: 767.98px) {
+  .salebg::before {
+    clip-path: none;
+  }
+  .sale {
+    background-size: cover;
+  }
+}
+.nav-bg {
+  background-image: url("https://greepfireworks.com/images/newconfetti.png") !important;
+  min-height: 200px; /* Or appropriate height */
+  background-size: cover; /* Ensure image covers the area */
+}
+.spanName {
+  color: #001b5a;
+  font-family: "Merienda";
+  font-weight: bolder;
+  font-size: 28px;
+}

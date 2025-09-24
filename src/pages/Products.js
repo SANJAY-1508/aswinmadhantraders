@@ -13,11 +13,11 @@ const Products = () => {
   return (
     <>
       <MetaTags
-        title="Crackers Price List | Sai Ganesh Crackers | Best Crackers Shops"
+        title="Crackers Price List | Aswin Madhan Traders | Best Crackers Shops"
         type="website"
-        siteName="saiganeshcrackers.com"
-        url="https://saiganeshcrackers.com/"
-        keywords="Wholesale Crackers | Sai Ganesh Crackers | Retails Crackers | Including sparklers, rockets, and more | Celebrate Diwali with affordable and exciting crackers"
+        siteName="aswinmadhantraders.com"
+        url="https://aswinmadhantraders.com/"
+        keywords="Wholesale Crackers | Aswin Madhan Traders | Retails Crackers | Including sparklers, rockets, and more | Celebrate Diwali with affordable and exciting crackers"
         description="Find the best deals on a wide variety of fireworks"
         revisitAfter="10 Days"
       />

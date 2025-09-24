@@ -35,10 +35,10 @@ const About = () => {
             <Row>
               <Col lg="6" className="py-3 align-self-center">
                 <h3 className="bold">About Us</h3>
-                <h4 className="bold"> Sai Ganesh Crackers</h4>
+                <h4 className="bold"> Aswin Madhan Traders</h4>
                 <div className="regular">
                   <p>
-                    Welcome to Sai Ganesh Crackers, your one-stop destination
+                    Welcome to Aswin Madhan Traders, your one-stop destination
                     for high-quality crackers available both in retail and
                     wholesale! As one of the leading cracker stores in the
                     region, we offer an extensive variety of fireworks ranging

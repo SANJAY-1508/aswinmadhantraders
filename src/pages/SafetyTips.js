@@ -9,12 +9,12 @@ const SafetyTips = () => {
   return (
     <div>
       <MetaTags
-        title="Safety Tips - Sai Ganesh Crackers - Whole sale Crackers"
+        title="Safety Tips - Aswin Madhan Traders - Whole sale Crackers"
         type="website"
-        siteName="saiganeshcrackers.com"
-        url="https://saiganeshcrackers.com/safetytips"
-        keywords="Safety Tips | Sai Ganesh Crackers | Fireworks Safety"
-        description="Learn essential safety tips for handling fireworks Sai Ganesh Crackers."
+        siteName="aswinmadhantraders.com"
+        url="https://aswinmadhantraders.com/safetytips"
+        keywords="Safety Tips | Aswin Madhan Traders | Fireworks Safety"
+        description="Learn essential safety tips for handling fireworks Aswin Madhan Traders."
         revisitAfter="10 Days"
       />
       <AppBar />

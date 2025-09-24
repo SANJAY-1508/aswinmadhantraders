@@ -9,11 +9,8 @@ import CountUp from "react-countup";
 import { Buttons } from "../components/Buttons/Buttons";
 import { useNavigate } from "react-router-dom";
 
-
-
 // import Banner from './components/Banner';
 const Home = () => {
- 
   useEffect(() => {
     AOS.init({
       offset: 100, // Offset (in px) from the original trigger point
@@ -32,7 +29,7 @@ const Home = () => {
     <>
       <div className="over">
         <AppBar />
-       
+
         {/* <Banner/> */}
 
         {/* <intro start */}
@@ -50,7 +47,7 @@ const Home = () => {
                 <div data-aos="fade-right">
                   <h4>
                     Welcome to{" "}
-                    <span className="spanName"> SAI GANESH CRACKERS</span>{" "}
+                    <span className="spanName"> Aswin Madhan Traders </span>{" "}
                   </h4>
                   <h2 class=" bold pt-3 subheadcolor">
                     Diwali Best Crackers In sivakasi

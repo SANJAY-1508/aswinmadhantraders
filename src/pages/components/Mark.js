@@ -8,9 +8,7 @@ const Mark = () => {
           <Row>
             <Col lg="12" className="py-3">
               <div className="text-center regular text-white">
-                {" "}
-                Copyright © 2024,. Sai Ganesh Crackers Crackers. All rights
-                reserved{" "}
+                Copyright © 2025,. Aswin Madhan Traders. All rights reserved
               </div>
             </Col>
           </Row>

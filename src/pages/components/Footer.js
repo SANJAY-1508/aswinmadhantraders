@@ -28,7 +28,10 @@ const Footer = () => {
         </div>
       )}
       <div className="fixed point">
-        <WhatsAppButton name="Sai Ganesh Crackers" phoneNumber="916379942657" />
+        <WhatsAppButton
+          name="Aswin Madhan Traders"
+          phoneNumber="916379942657"
+        />
       </div>
       <a href="https://maps.app.goo.gl/VkdHfY1NSjnqLGbp6">
         <div className="fixed point3" style={{ cursor: "pointer" }}>
@@ -135,7 +138,9 @@ const Footer = () => {
                         <p>
                           <FaRegEnvelope />
                         </p>
-                        <div className="text_one">saiganesh@gmail.com</div>
+                        <div className="text_one">
+                          aswinmadhantraders@gmail.com
+                        </div>
                       </li>
                     </ul>
                   </Col>
@@ -157,8 +162,7 @@ const Footer = () => {
             <Row>
               <Col lg="12" className="py-3">
                 <div className="text-center regular text-white">
-                  {" "}
-                  Copyright © 2024,. Sai Ganesh Crackers. All rights reserved{" "}
+                  Copyright © 2025,. Aswin Madhan Traders. All rights reserved
                 </div>
               </Col>
             </Row>

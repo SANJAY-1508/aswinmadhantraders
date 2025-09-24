@@ -93,7 +93,9 @@ const About = () => {
         </div>
       </>
       <>
-        <HomeProductThree />
+        <div className="overflow-hidden">
+          <HomeProductThree />
+        </div>
       </>
       <Footer />
     </>

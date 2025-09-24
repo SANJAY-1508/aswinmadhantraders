@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import styled from "styled-components";
 const ButtonStyle = styled.button`
   background-color: #6482ad;
@@ -40,4 +41,13 @@ const Close = ({ label, onClick }) => {
   );
 };
 
-export { Buttons, Close };
+const ButtonView = ({ label, onClick, className }) => {
+  return (
+    <div>
+      <Button onClick={onClick} className={className}>
+        {label}
+      </Button>
+    </div>
+  );
+};
+export { Buttons, Close, ButtonView };

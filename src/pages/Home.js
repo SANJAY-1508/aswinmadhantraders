@@ -8,6 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import CountUp from "react-countup";
 import { Buttons } from "../components/Buttons/Buttons";
 import { useNavigate } from "react-router-dom";
+import { HomeProductThree } from "./HomeProducts";
 
 // import Banner from './components/Banner';
 const Home = () => {
@@ -249,172 +250,10 @@ const Home = () => {
             </Row>
           </Container>
         </div>
+        <>
+          <HomeProductThree />
+        </>
 
-        {/* products start */}
-        <Container className="py-5 padding">
-          <Row className="justify-content-center">
-            <Col lg="12" xs={12} className="text-center py-3">
-              <h2 className="bold h1color">Quality Products</h2>
-              <p className="regular">
-                Our motto is to make every festival celebration bright and
-                safe.This, we bring out with our wide range of firecrackers.
-                With over 200 varieties of crackers developed and marketed every
-                year, we are among the most sought brands in the Sivakasi region
-                and around the country. Our products are known for their safety
-                and we take great efforts to ensure that all our orders are
-                delivered in a standard time frame with an economical pricing.
-              </p>
-            </Col>
-            {/* <div class="product wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.6ms">
-				<a href="products.php">
-					<img src="images/bombs.jpg" class="img-fluid" alt="Single Sounds" title="Single Sounds">
-				</a>
-				<div class="product-cntn">
-					<h5 class="bold">Single Sound Crackers</h5>
-					<p class="regular">Kuruvi,Laxmi,Spider...</p>
-				
-				</div>
-			</div> */}
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div className="home-product" data-aos="flip-left">
-                <div className="image-container">
-                  <img
-                    src={require("../assets/images/bombs.jpg")}
-                    className="img-fluid product-image"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold"> One Sound Crackers</h5>
-                  <p className="regular">Kuruvi, Laxmi, Spider...</p>
-                </div>
-              </div>
-            </Col>
-
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div class="home-product" data-aos="flip-left">
-                <div>
-                  <img
-                    src={require("../assets/images/chakkars.jpg")}
-                    className="img-fluid"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold">Chakkars</h5>
-                  <p className="regular">Chakkar Big,Asoka,Deluxe...</p>
-                </div>
-              </div>
-            </Col>
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div class="home-product" data-aos="flip-left">
-                <div>
-                  <img
-                    src={require("../assets/images/flowerpots.jpg")}
-                    className="img-fluid"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold"> Flower Pots</h5>
-                  <p className="regular">Big,Small,Colorkoti...</p>
-                </div>
-              </div>
-            </Col>
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div class="home-product" data-aos="flip-left">
-                <div>
-                  <img
-                    src={require("../assets/images/wala.jpg")}
-                    className="img-fluid"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold"> Garlands</h5>
-                  <p className="regular">Deluxe,Giant Garlands...</p>
-                </div>
-              </div>
-            </Col>
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div class="home-product" data-aos="flip-left">
-                <div>
-                  <img
-                    src={require("../assets/images/sparklers.jpg")}
-                    className="img-fluid"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold">Sparklers</h5>
-                  <p className="regular">Red,Green,Electric...</p>
-                </div>
-              </div>
-            </Col>
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div class="home-product" data-aos="flip-left">
-                <div>
-                  <img
-                    src={require("../assets/images/rockets.jpg")}
-                    className="img-fluid"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold"> Rockets</h5>
-                  <p className="regular">Baby Rockets,Lunik,Whistle...</p>
-                </div>
-              </div>
-            </Col>
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div class="home-product" data-aos="flip-left">
-                <div>
-                  <img
-                    src={require("../assets/images/fountain.jpg")}
-                    className="img-fluid"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold"> fountain</h5>
-                  <p className="regular">Fun Zone, Photo Flash, Drone...</p>
-                </div>
-              </div>
-            </Col>
-            <Col lg="4" md="4" xs="12" className="py-3 text-center">
-              <div class="home-product" data-aos="flip-left">
-                <div>
-                  <img
-                    src={require("../assets/images/giftbox.jpg")}
-                    className="img-fluid"
-                    alt="product name"
-                  />
-                </div>
-                <div className="home-product-name">
-                  <h5 className="bold"> Gift Box</h5>
-                  <p className="regular">20 Items, 30 Items...</p>
-                </div>
-              </div>
-            </Col>
-            <Col lg="12">
-              <div className="text-center py-3" data-aos="fade-up">
-                <Buttons
-                  label={<>View More Products</>}
-                  onClick={handlenavigate}
-                ></Buttons>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        {/* products end */}
-        {/* paralax end */}
-
-        {/* product banner start */}
-
-        {/* product banner end */}
-        {/* sale bg start*/}
-
-        {/* sale bg end*/}
         <Footer />
       </div>
     </>

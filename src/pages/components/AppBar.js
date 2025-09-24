@@ -24,12 +24,12 @@ const AppBar = () => {
                         alt="gpay"
                       />
                     </div>
-                    <div className="text-white">
+                    <div className="text-black">
                       <h5 className="bold mt-2 mx-2">6379942657</h5>
                     </div>
                   </div>
                 </Col>
-                <Col lg="8" className="align-self-center text-white">
+                <Col lg="8" className="align-self-center text-black">
                   <Marquee
                     pauseOnHover={true}
                     direction="right"
@@ -141,7 +141,7 @@ const AppBar = () => {
       <>
         <Navbar
           style={{
-            backgroundColor: "#175a64",
+            backgroundColor: "#e8b814",
           }}
           expand="lg"
           className=" headnav mt-2"

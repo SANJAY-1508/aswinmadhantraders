@@ -82,13 +82,13 @@ const Home = () => {
           <Row className="justify-content-center">
             <Col lg="6">
               <h1 class=" bold text-center pb-5 lg-font whychooseh1color">
-                Why Choose Sivakasi Crackers
+                Why Choose Aswin Madhan Traders
               </h1>
               <p className="regular text-center">
-                Sivakasi Crackers Shop is a top provider of premium crackers and
-                fireworks located in Sivakasi, Tamil Nadu. We offer authentic
-                Sivakasi crackers at highly competitive prices, ensuring you get
-                the best quality for your celebrations.
+                Aswin Madhan Traders is a leading provider of premium crackers
+                and fireworks based in Sivakasi, Tamil Nadu. We offer authentic
+                products at highly competitive prices, ensuring the best quality
+                for your celebrations.
               </p>
             </Col>
           </Row>

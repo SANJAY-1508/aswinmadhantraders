@@ -31,19 +31,10 @@ const Home = () => {
       <div className="over">
         <AppBar />
 
-        {/* <Banner/> */}
-
         {/* <intro start */}
         <div className="padding">
           <Container>
             <Row>
-              <Col lg="6" className="py-3" data-aos="fade-left">
-                <img
-                  src={require("../assets/images/Bigimage.png")}
-                  className="img-fluid"
-                  alt="product name"
-                />
-              </Col>
               <Col lg="6" xs={12} className="py-3 align-self-center">
                 <div data-aos="fade-right">
                   <h4>
@@ -72,6 +63,13 @@ const Home = () => {
                     Gift Boxes..
                   </p>
                 </div>
+              </Col>
+              <Col lg="6" className="py-3" data-aos="fade-left">
+                <img
+                  src={require("../assets/images/home_img_01.webp")}
+                  className="img-fluid"
+                  alt="product name"
+                />
               </Col>
             </Row>
           </Container>
@@ -196,13 +194,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* <intro end */}
-
-        {/* our special */}
-
-        {/* our special */}
-        {/* paralax start */}
 
         <div className="counter padding bg-overlay z">
           <Container>

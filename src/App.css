@@ -157,7 +157,7 @@ a {
   font-family: "Merienda";
 }
 .mark-bg {
-  background-color: #d82222;
+  background-color: #175a64;
   color: #1f1d1d;
   font-family: "Merienda";
 }
@@ -248,6 +248,23 @@ a {
 .h1color {
   color: darkblue;
   font-family: "Merienda";
+}
+.whychooseh1color {
+  color: #ff1616;
+}
+.why-box-one,
+.why-box-two {
+  border: 2px solid #ff1616;
+  border-radius: 50px;
+  height: 220px;
+  padding: 30px;
+}
+.choose-icon {
+  background-color: #ff1616 !important;
+  border-radius: 10px;
+  display: inline-flex;
+  margin-bottom: 5px;
+  padding: 16px;
 }
 .containerWidth {
   width: 100%;

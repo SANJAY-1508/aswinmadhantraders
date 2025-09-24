@@ -9,6 +9,7 @@ import CountUp from "react-countup";
 import { Buttons } from "../components/Buttons/Buttons";
 import { useNavigate } from "react-router-dom";
 import { HomeProductThree } from "./HomeProducts";
+import { MagicStar, HeartTick, Quant, Tag2 } from "iconsax-react";
 
 // import Banner from './components/Banner';
 const Home = () => {
@@ -74,127 +75,83 @@ const Home = () => {
             </Row>
           </Container>
         </div>
+        {/* <intro end */}
 
-        <div className="padding WholeRetail">
-          <Container>
-            <Row>
-              <Col lg="6" className="py-3">
-                <img
-                  src={require("../assets/images/aboutimage1.webp")}
-                  className="img-fluid"
-                  alt="product name"
-                  data-aos="flip-right"
-                />
-              </Col>
-              <Col lg="6" className="py-3">
-                <img
-                  src={require("../assets/images/aboutimage2.webp")}
-                  className="img-fluid"
-                  alt="product name"
-                  data-aos="flip-left"
-                />
-              </Col>
-            </Row>
-          </Container>
-        </div>
-
-        <div className="whywe">
-          <div className="container-fluid pad px-lg-5">
-            <div className="row">
-              <div className="col-lg-4 col-md-6 py-3">
-                <div
-                  className="quality  flipInX why ml-auto  "
-                  data-wow-duration="2s"
-                  data-wow-delay="0.4ms"
-                >
-                  <div className="icon">
-                    <span>
-                      <i className="fa fa-puzzle-piece "></i>
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="bold">Quality</h3>
-                    <div className="regular">
-                      Quality &amp; innovation are the key behind our success.
-                    </div>
-                  </div>
+        {/* why choose start */}
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg="6">
+              <h1 class=" bold text-center pb-5 lg-font whychooseh1color">
+                Why Choose Sivakasi Crackers
+              </h1>
+              <p className="regular text-center">
+                Sivakasi Crackers Shop is a top provider of premium crackers and
+                fireworks located in Sivakasi, Tamil Nadu. We offer authentic
+                Sivakasi crackers at highly competitive prices, ensuring you get
+                the best quality for your celebrations.
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg="3" xs={12}>
+              <div data-aos="fade-right" className="why-box-one">
+                <div className="choose-icon" data-aos="zoom-in-left">
+                  <Quant size="32" color="#fff" />
                 </div>
-
-                <div
-                  className="quality marleft  flipInX why ml-auto  marright flipInX"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.2ms"
-                >
-                  <div className="icon">
-                    <span>
-                      <i className="fa fa-magic"></i>
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="bold ">Safe to Use</h3>
-                    <div className="regular">
-                      Crackers we offer are safe and made from fine quality raw
-                      materials.
-                    </div>
-                  </div>
-                </div>
+                <h5 class=" bold subheadcolor">Quality</h5>
+                <p class="regular">
+                  Manufacturing Quality Crackers & innovation are the key behind
+                  our success.
+                </p>
               </div>
-              <div className="col-lg-4  col-md-4 align-self-center d-md-none d-lg-block">
-                <div
-                  className="text-center "
-                  data-wow-duration="2s"
-                  data-wow-delay="0.2ms"
-                >
-                  <img
-                    src="https://gurubhagavancrackers.com/images/centergift.png"
-                    className="img-fluid"
-                    alt="Gurubhagavan Crackers"
-                    title="Gurubhagavan Crackers"
-                  ></img>
+            </Col>
+            <Col lg="3" xs={12}>
+              <div data-aos="fade-down" className="why-box-two">
+                <div className="choose-icon" data-aos="zoom-in-left">
+                  <Tag2 size="32" color="#fff" />
                 </div>
+                <h5 class=" bold subheadcolor">Affordeble Price</h5>
+                <p class="regular">
+                  We are producing safe and compliant crackers with highest
+                  quality at low price.
+                </p>
               </div>
-              <div className="col-lg-4 col-md-6 py-3">
-                <div
-                  className="why ml-auto marright  flipInX"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.4ms"
-                >
-                  <div className="icon">
-                    <span>
-                      <i className="fa fa-heart"></i>
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="bold  ">Customer Satisfaction</h3>
-                    <div className="regular">
-                      Our quality and timely delivery has attracted customers
-                      easily.
-                    </div>
-                  </div>
+            </Col>
+            <Col lg="3" xs={12}>
+              <div data-aos="fade-up" className="why-box-one">
+                <div className="choose-icon">
+                  <MagicStar size="32" color="#fff" />
                 </div>
-                <div
-                  className="why ml-auto  marright flipInX"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.4ms"
-                >
-                  <div className="icon">
-                    <span>
-                      <i className="fa fa-tags"></i>
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="bold  ">Genuine Price</h3>
-                    <div className="regular">
-                      Quality products at economic price is the main motto for
-                      us
-                    </div>
-                  </div>
-                </div>
+                <h5 class=" bold subheadcolor">Safe To Use</h5>
+                <p class="regular">
+                  Crackers we offer are safe and made from fine quality raw
+                  materials.
+                </p>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+            <Col lg="3" xs={12} className="pad-z">
+              <div data-aos="fade-left" className="why-box-two">
+                <div className="choose-icon">
+                  <HeartTick size="32" color="#fff" />
+                </div>
+                <h5 class=" bold subheadcolor">Customer Satisfaction</h5>
+                <p class="regular">
+                  Our quality and timely delivery has attracted customers
+                  easily.
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        {/* why choose end */}
 
+        {/* our products start */}
+        <>
+          <HomeProductThree />
+        </>
+        {/* our products end */}
+
+        {/* counter start */}
         <div className="counter padding bg-overlay z">
           <Container>
             <Row>
@@ -241,9 +198,32 @@ const Home = () => {
             </Row>
           </Container>
         </div>
-        <>
-          <HomeProductThree />
-        </>
+        {/* counter end */}
+
+        {/* wholesale start */}
+        <div className="padding WholeRetail">
+          <Container>
+            <Row>
+              <Col lg="6" className="py-3">
+                <img
+                  src={require("../assets/images/aboutimage1.webp")}
+                  className="img-fluid"
+                  alt="product name"
+                  data-aos="flip-right"
+                />
+              </Col>
+              <Col lg="6" className="py-3">
+                <img
+                  src={require("../assets/images/aboutimage2.webp")}
+                  className="img-fluid"
+                  alt="product name"
+                  data-aos="flip-left"
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        {/* wholesale end */}
 
         <Footer />
       </div>

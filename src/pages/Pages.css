@@ -231,49 +231,58 @@
 
 .family-pack-container {
   padding: 20px;
+  text-align: center;
 }
 
+/* 🔥 Family Pack heading blink */
 .family-pack-heading {
-  background: #007bff; /* blue */
+  background: linear-gradient(90deg, #000000, #dd2476);
   color: #fff;
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-  cursor: default;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 2rem;
+  animation: blinkText 1s infinite;
 }
 
-.family-pack-heading:hover {
-  background: #0056b3; /* darker blue on hover */
+@keyframes blinkText {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
-/* Button common styles */
+/* Common Button Styling */
 .pack-btn {
   font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
 }
 
 /* 3000 Pack button */
 .pack-3000 {
-  background-color: #28a745; /* green */
-  border: none;
+  background: linear-gradient(45deg, #1d976c, #93f9b9);
 }
-
 .pack-3000:hover {
-  background-color: #1e7e34; /* dark green */
+  background: linear-gradient(45deg, #159957, #155799);
+  transform: scale(1.05);
 }
 
 /* 5000 Pack button */
 .pack-5000 {
-  background-color: #ffc107; /* yellow */
-  border: none;
-  color: #000;
+  background: linear-gradient(45deg, #f7971e, #ffd200);
 }
-
 .pack-5000:hover {
-  background-color: #e0a800; /* dark yellow */
+  background: linear-gradient(45deg, #e52d27, #b31217);
+  transform: scale(1.05);
 }
 
 /* Family Pack end*/

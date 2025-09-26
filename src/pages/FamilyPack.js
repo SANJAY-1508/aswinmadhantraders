@@ -35,7 +35,7 @@ const FamilyPack = () => {
       <Modal
         show={show3000}
         onHide={() => setShow3000(false)}
-        backdrop="static" // 👈 outside click la close agathu
+        backdrop="static"
         centered
       >
         <Modal.Header closeButton>

@@ -13,9 +13,9 @@ const FamilyPack = () => {
         </Col>
       </Row>
 
-      <Row className="align-items-center justify-content-around">
+      <Row className="align-items-center justify-content-around text-center">
         {/* 🔥 Crackers GIF Left */}
-        <Col xs={3} className="text-end">
+        <Col xs={12} md={3} className="mb-3 mb-md-0 text-md-end">
           <img
             src={require("../assets/images/rocket.gif")}
             alt="Crackers Left"
@@ -24,7 +24,7 @@ const FamilyPack = () => {
         </Col>
 
         {/* 3000 Pack Button */}
-        <Col xs={3} className="text-center">
+        <Col xs={12} md={3} className="mb-3 mb-md-0">
           <Button
             className="pack-btn pack-3000"
             onClick={() => setShow3000(true)}
@@ -34,7 +34,7 @@ const FamilyPack = () => {
         </Col>
 
         {/* 5000 Pack Button */}
-        <Col xs={3} className="text-center">
+        <Col xs={12} md={3} className="mb-3 mb-md-0">
           <Button
             className="pack-btn pack-5000"
             onClick={() => setShow5000(true)}
@@ -44,7 +44,7 @@ const FamilyPack = () => {
         </Col>
 
         {/* 🔥 Crackers GIF Right */}
-        <Col xs={3} className="text-start">
+        <Col xs={12} md={3} className="text-md-start">
           <img
             src={require("../assets/images/rocket.gif")}
             alt="Crackers Right"

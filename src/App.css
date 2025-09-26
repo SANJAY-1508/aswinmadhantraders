@@ -73,9 +73,9 @@ a {
   background-image: url("https://greepfireworks.com/images/newconfetti.png");
 }
 .navbar-nav .nav-link.active {
-  color: #ffffff !important;
+  color: #000000 !important;
   border-radius: 20px 0;
-  background-color: rgb(12 12 12);
+  background-color: white;
 }
 
 .fadeInLeft {
@@ -157,8 +157,8 @@ a {
   font-family: "Merienda";
 }
 .mark-bg {
-  background-color: #922d2d;
-  color: white !important;
+  background-color: rgb(255 0 0);
+  color: black !important;
   font-family: "Merienda";
 }
 .gpay {

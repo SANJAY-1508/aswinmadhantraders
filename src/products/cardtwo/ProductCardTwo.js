@@ -831,9 +831,9 @@ const StyledTable = styled(BootstrapTable)`
   }
 `;
 const Category = styled.div`
-  background-color: brown;
+  background-color: #ff2020;
   border: 0;
-  border-color: brown;
+  border-color: #ff2020;
   color: white;
   text-align: center;
   padding: 10px;

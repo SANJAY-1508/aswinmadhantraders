@@ -24,8 +24,8 @@ const AppBar = () => {
                         alt="gpay"
                       />
                     </div>
-                    <div className="text-white">
-                      <h5 className="bold mt-2 mx-2">6379942657</h5>
+                    <div>
+                      <h5 className="bold mt-2 mx-2 text-white">6379942657</h5>
                     </div>
                   </div>
                 </Col>
@@ -141,7 +141,7 @@ const AppBar = () => {
       <>
         <Navbar
           style={{
-            backgroundColor: "#922d2d",
+            backgroundColor: "rgb(255 0 0)",
           }}
           expand="lg"
           className=" headnav mt-2"

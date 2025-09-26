@@ -6,14 +6,25 @@ const FamilyPack = () => {
   const [show5000, setShow5000] = useState(false);
 
   return (
-    <Container fluid className=" family-pack-container">
+    <Container fluid className="family-pack-container">
       <Row className="text-center">
         <Col>
           <h2 className="family-pack-heading mb-4">Family Pack</h2>
         </Col>
       </Row>
-      <Row className="justify-content-around">
+
+      <Row className="align-items-center justify-content-around">
+        {/* 🔥 Crackers GIF Left */}
         <Col xs={3} className="text-end">
+          <img
+            src={require("../assets/images/rocket.gif")}
+            alt="Crackers Left"
+            className="crackers-gif"
+          />
+        </Col>
+
+        {/* 3000 Pack Button */}
+        <Col xs={3} className="text-center">
           <Button
             className="pack-btn pack-3000"
             onClick={() => setShow3000(true)}
@@ -21,13 +32,24 @@ const FamilyPack = () => {
             3000 Pack
           </Button>
         </Col>
-        <Col xs={3} className="text-start">
+
+        {/* 5000 Pack Button */}
+        <Col xs={3} className="text-center">
           <Button
             className="pack-btn pack-5000"
             onClick={() => setShow5000(true)}
           >
             5000 Pack
           </Button>
+        </Col>
+
+        {/* 🔥 Crackers GIF Right */}
+        <Col xs={3} className="text-start">
+          <img
+            src={require("../assets/images/rocket.gif")}
+            alt="Crackers Right"
+            className="crackers-gif"
+          />
         </Col>
       </Row>
 

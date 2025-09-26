@@ -25,7 +25,7 @@ const Products = () => {
       <div id="app-bar">
         <AppBar />
       </div>
-      <Banner />
+      {/* <Banner /> */}
       <FamilyPack />
       <ProductController />
       <Footer />

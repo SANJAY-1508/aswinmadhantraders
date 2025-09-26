@@ -228,13 +228,11 @@
 }
 
 /* Family Pack st*/
-
 .family-pack-container {
-  padding: 40px;
+  padding: 25px;
   text-align: center;
 }
 
-/* 🔥 Family Pack heading blink */
 .family-pack-heading {
   background: linear-gradient(90deg, #000000, #dd2476);
   color: #fff;
@@ -256,7 +254,32 @@
   }
 }
 
-/* Common Button Styling */
+/* 🔥 Crackers GIF */
+.crackers-gif {
+  width: 140px;
+  height: 143px;
+  animation: shake 1.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Buttons */
 .pack-btn {
   font-weight: 600;
   padding: 12px 25px;
@@ -270,21 +293,19 @@
 /* 3000 Pack button */
 .pack-3000 {
   background: #053878 !important;
-  border: none !important;
 }
 .pack-3000:hover {
-  background: #053878 !important;
-  transform: scale(1.05);
+  background: #052a5c !important;
+  transform: scale(1.1);
 }
 
 /* 5000 Pack button */
 .pack-5000 {
   background: #053878 !important;
-  border: none !important;
 }
 .pack-5000:hover {
-  background: #053878 !important;
-  transform: scale(1.05);
+  background: #052a5c !important;
+  transform: scale(1.1);
 }
 
 /* Family Pack end*/

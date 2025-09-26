@@ -831,9 +831,10 @@ const StyledTable = styled(BootstrapTable)`
   }
 `;
 const Category = styled.div`
-  background-color: #ff2020;
+  margin-top : 5px;
+  background-color: #9e1d18;
   border: 0;
-  border-color: #ff2020;
+  border-color: #9e1d18;
   color: white;
   text-align: center;
   padding: 10px;

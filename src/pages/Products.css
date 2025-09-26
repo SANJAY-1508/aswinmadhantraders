@@ -121,6 +121,7 @@
   .net_rate,
   .total_price {
     font-size: 13px !important;
+    font-weight: bolder;
   }
   /* cart start */
   .cart-icon,

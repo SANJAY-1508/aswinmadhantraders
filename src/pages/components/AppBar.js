@@ -141,7 +141,7 @@ const AppBar = () => {
       <>
         <Navbar
           style={{
-            backgroundColor: "rgb(255 0 0)",
+            backgroundColor: "#9e1d18",
           }}
           expand="lg"
           className=" headnav mt-2"

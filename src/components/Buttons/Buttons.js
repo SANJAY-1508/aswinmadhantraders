@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import styled from "styled-components";
 const ButtonStyle = styled.button`
-  background-color: #dc0000;
+  background-color: #9e1d18;
   font-size: 18px;
   color: white;
   font-family: bold;

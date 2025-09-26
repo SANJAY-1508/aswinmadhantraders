@@ -269,19 +269,21 @@
 
 /* 3000 Pack button */
 .pack-3000 {
-  background: linear-gradient(45deg, #1d976c, #93f9b9);
+  background: #053878 !important;
+  border: none !important;
 }
 .pack-3000:hover {
-  background: linear-gradient(45deg, #159957, #155799);
+  background: #053878 !important;
   transform: scale(1.05);
 }
 
 /* 5000 Pack button */
 .pack-5000 {
-  background: linear-gradient(45deg, #f7971e, #ffd200);
+  background: #053878 !important;
+  border: none !important;
 }
 .pack-5000:hover {
-  background: linear-gradient(45deg, #e52d27, #b31217);
+  background: #053878 !important;
   transform: scale(1.05);
 }
 

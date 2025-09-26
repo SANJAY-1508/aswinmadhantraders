@@ -294,6 +294,7 @@
 /* 3000 Pack button */
 .pack-3000 {
   background: #053878 !important;
+  border: none !important;
 }
 .pack-3000:hover {
   background: #052a5c !important;
@@ -303,6 +304,7 @@
 /* 5000 Pack button */
 .pack-5000 {
   background: #053878 !important;
+  border: none !important;
 }
 .pack-5000:hover {
   background: #052a5c !important;

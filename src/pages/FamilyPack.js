@@ -6,7 +6,7 @@ const FamilyPack = () => {
   const [show5000, setShow5000] = useState(false);
 
   return (
-    <Container fluid className="family-pack-container">
+    <Container fluid className="family-pack-container overflow-hidden">
       <Row className="text-center">
         <Col>
           <h2 className="family-pack-heading mb-4">Family Pack</h2>

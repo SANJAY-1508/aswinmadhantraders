@@ -231,6 +231,7 @@
 .family-pack-container {
   padding: 25px;
   text-align: center;
+  background-color: none;
 }
 
 .family-pack-heading {

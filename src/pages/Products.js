@@ -8,6 +8,7 @@ import "./Products.css";
 import Banner from "./components/Banner";
 import AppBar from "./components/AppBar";
 import Footer from "./components/Footer";
+import FamilyPack from "./FamilyPack";
 
 const Products = () => {
   return (
@@ -25,6 +26,7 @@ const Products = () => {
         <AppBar />
       </div>
       <Banner />
+      <FamilyPack />
       <ProductController />
       <Footer />
     </>

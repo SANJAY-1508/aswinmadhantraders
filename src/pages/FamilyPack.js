@@ -29,7 +29,7 @@ const FamilyPack = () => {
             className="pack-btn pack-3000"
             onClick={() => setShow3000(true)}
           >
-            3000 Pack
+            3000 Pack Details
           </Button>
         </Col>
 
@@ -39,7 +39,7 @@ const FamilyPack = () => {
             className="pack-btn pack-5000"
             onClick={() => setShow5000(true)}
           >
-            5000 Pack
+            5000 Pack Details
           </Button>
         </Col>
 

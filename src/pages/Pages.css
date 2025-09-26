@@ -226,3 +226,54 @@
   font-weight: bolder;
   font-size: 28px;
 }
+
+/* Family Pack st*/
+
+.family-pack-container {
+  padding: 20px;
+}
+
+.family-pack-heading {
+  background: #007bff; /* blue */
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  cursor: default;
+}
+
+.family-pack-heading:hover {
+  background: #0056b3; /* darker blue on hover */
+}
+
+/* Button common styles */
+.pack-btn {
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* 3000 Pack button */
+.pack-3000 {
+  background-color: #28a745; /* green */
+  border: none;
+}
+
+.pack-3000:hover {
+  background-color: #1e7e34; /* dark green */
+}
+
+/* 5000 Pack button */
+.pack-5000 {
+  background-color: #ffc107; /* yellow */
+  border: none;
+  color: #000;
+}
+
+.pack-5000:hover {
+  background-color: #e0a800; /* dark yellow */
+}
+
+/* Family Pack end*/

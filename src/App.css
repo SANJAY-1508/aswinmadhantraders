@@ -71,6 +71,7 @@ a {
 }
 .logoBackground {
   background-image: url("https://greepfireworks.com/images/newconfetti.png");
+   background-image: url("../src/assets/images/fire.d0d73013f394ec35b426.gif");
 }
 .navbar-nav .nav-link.active {
   color: #000000 !important;

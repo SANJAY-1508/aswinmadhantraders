@@ -195,7 +195,7 @@ const ProductCardTwo = ({
                     <th>Total Products : {totals.totalProducts}</th>
                     <th>
                       {" "}
-                      Discount with Total (80%) :{" "}
+                      Discount with Total (90%) :{" "}
                       {totals.discountRate.toFixed(2)}
                     </th>
                     <th>Net Rate Total : {totals.overallTotal.toFixed(2)}</th>
